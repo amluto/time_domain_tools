@@ -1,0 +1,13 @@
+To build:
+
+./autogen.sh
+./configure
+make
+python setup.py build_ext --in-place # Or your favorite set of options.
+
+If you are on something like RHEL5, try:
+./configure CC=gcc44 CXX=g++44
+That might give you a new enough gcc to use SSE4, which will speed up
+data format conversion a lot.
+
+The build system is gross.  Improvements are welcome.
